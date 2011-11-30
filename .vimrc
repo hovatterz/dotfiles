@@ -15,7 +15,6 @@ set showmatch
 set showcmd
 
 " Search Results
-set hlsearch " Hightlighted Results
 set incsearch " Incremental Searching
 
 " Indentation Settings
