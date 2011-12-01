@@ -2,6 +2,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 set background=dark
+set ruler
 
 " Leader
 let mapleader=","
