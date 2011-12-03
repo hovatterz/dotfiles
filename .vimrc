@@ -13,6 +13,7 @@ set shiftwidth=4
 
 " Show things
 set noshowmatch
+let loaded_matchparen = 1
 set showcmd
 
 " Search Results
