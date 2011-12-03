@@ -12,6 +12,7 @@ set tabstop=4
 set shiftwidth=4
 
 " Show things
+set noshowmatch
 set showcmd
 
 " Search Results
