@@ -4,6 +4,9 @@ call pathogen#helptags()
 set background=dark
 set ruler
 
+" Trying to fix TMUX weirdness
+map <Esc>[B <Down>
+
 " Leader
 let mapleader=","
 
