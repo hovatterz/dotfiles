@@ -10,6 +10,9 @@ map <Esc>[B <Down>
 " Leader
 let mapleader=","
 
+" Clipboard
+set clipboard=unnamed
+
 " Spacing
 set tabstop=4
 set shiftwidth=4
@@ -28,8 +31,9 @@ set smartindent
 
 " Line Stuff
 set number " Show numbers
-set textwidth=0 " Endless line width
-set nowrap " No wrapping
+set textwidth=80
+set wrap
+set showbreak=>>>
 
 " Format Options
 set formatoptions=tcqor
@@ -46,4 +50,8 @@ syntax on
 
 filetype plugin on
 filetype plugin indent on
+
+" Rspec
+map <Leader>T :! rspec spec/
+
 
