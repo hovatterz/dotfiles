@@ -1,1 +1,0 @@
-/Users/zack/.vim/.vimrc
