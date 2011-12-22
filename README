@@ -4,9 +4,9 @@ Installation:
 
 Create symlinks:
 
-    ln -s ~/dotfiles/.vim/vimrc ~/.vimrc
-	ln -s ~/dotfiles/.vim ~/.vim
-	ln -s ~/dotfiles/.bashrc ~/ ~/.bashrc
+	ln -s dotfiles/.vim/.vimrc ~/.vimrc
+	ln -s dotfiles/.vim/ ~/.vim
+	ln -s dotfiles/.bashrc ~/.bashrc
 
 Fetch submodules:
 
