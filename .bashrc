@@ -18,4 +18,25 @@ alias lla='ls -lGa'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
-export PS1='\[\e[1;36m\]\u\[\e[0m\]:\W\[\e[1;31m\]$(__git_ps1 "(%s)")\[\e[0m\] \[\e[1;36m\]$\[\e[0m\] '
+DULL=0
+BRIGHT=1
+FG_RED=31
+FG_GREEN=32
+FG_BLUE=34
+NORMAL="\[\e[0m\]"
+RED="\[\e[${DULL};${FG_RED}m\]"
+BRIGHT_RED="\[\e[${BRIGHT};${FG_RED}m\]"
+GREEN="\[\e[${DULL};${FG_GREEN}m\]"
+BRIGHT_GREEN="\[\e[${BRIGHT};${FG_GREEN}m\]"
+BLUE="\[\e[${DULL};${FG_BLUE}m\]"
+BRIGHT_BLUE="\[\e[${BRIGHT};${FG_BLUE}m\]"
+
+grb_git_prompt() {
+	local g="$(__gitdir)"
+	if [ -n "$g" ]; then
+		local GIT_PROMPT=`__git_ps1 "(%s)"`
+		echo ${GIT_PROMPT}
+	fi
+}
+
+export PS1="${BRIGHT_GREEN}\u${NORMAL}:\W${BRIGHT_GREEN}\$(grb_git_prompt)${NORMAL} $ "
