@@ -14,6 +14,7 @@ fi
 export TERM='xterm-color'
 alias ls='ls -G'
 alias ll='ls -lG'
+alias lla='ls -lGa'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
