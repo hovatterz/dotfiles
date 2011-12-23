@@ -11,6 +11,9 @@ if [ -f /opt/local/etc/bash_completion ]; then
 	. /opt/local/etc/bash_completion
 fi
 
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 export TERM='xterm-color'
 alias ls='ls -G'
 alias ll='ls -lG'
