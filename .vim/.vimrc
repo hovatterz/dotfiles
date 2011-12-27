@@ -1,6 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+colorscheme wombat
 set background=dark
 set ruler
 
