@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/unimpaired"]
 	path = .vim/bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule ".vim/bundle/vim-cocoa"]
+	path = .vim/bundle/vim-cocoa
+	url = https://github.com/msanders/cocoa.vim.git
