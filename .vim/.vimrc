@@ -11,9 +11,6 @@ map <Esc>[B <Down>
 " Leader
 let mapleader=","
 
-" Clipboard
-set clipboard=unnamed
-
 " Spacing
 set tabstop=4
 set shiftwidth=4
