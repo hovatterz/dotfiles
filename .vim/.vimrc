@@ -52,6 +52,9 @@ filetype plugin indent on
 " Rspec
 map <Leader>T :! rspec spec/
 
+" Switch between cpp/h files
+map <Leader>f :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+
 " Remap the tab key to do autocompletion or indentation depending on the
 " context (from http://www.vim.org/tips/tip.php?tip_id=102)
 function! InsertTabWrapper()
