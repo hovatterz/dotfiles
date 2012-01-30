@@ -2,6 +2,9 @@
 export PATH=${PATH}:/usr/local/bin
 export PATH="~/bin:$PATH"
 
+# JSTestDriver path
+export JSTESTDRIVER_HOME=~/bin
+
 #MacPorts Installer addition on 2011-09-13_at_10:10:44: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
@@ -10,9 +13,6 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 if [ -f /opt/local/etc/bash_completion ]; then
 	. /opt/local/etc/bash_completion
 fi
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 export TERM='xterm-color'
 alias ls='ls -G'
@@ -34,12 +34,16 @@ BRIGHT_GREEN="\[\e[${BRIGHT};${FG_GREEN}m\]"
 BLUE="\[\e[${DULL};${FG_BLUE}m\]"
 BRIGHT_BLUE="\[\e[${BRIGHT};${FG_BLUE}m\]"
 
-grb_git_prompt() {
+GIT_PS1_SHOWDIRTYSTATE=yes
+function grb_git_prompt() {
 	local g="$(__gitdir)"
 	if [ -n "$g" ]; then
 		local GIT_PROMPT=`__git_ps1 "(%s)"`
-		echo ${GIT_PROMPT}
+		echo "${GIT_PROMPT}"
 	fi
 }
 
 export PS1="${BRIGHT_GREEN}\u${NORMAL}:\W${BRIGHT_GREEN}\$(grb_git_prompt)${NORMAL} $ "
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

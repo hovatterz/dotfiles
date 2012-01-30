@@ -1,7 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-colorscheme wombat
+set showtabline=2
 set background=dark
 set ruler
 
@@ -67,3 +67,7 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
+
+
+" CommandT ignore stuff
+:set wildignore+=*.class,*.jar,*.psd,*.png,*.jpg,*.bmp,*.gif,*.jnilib,*.dylib
