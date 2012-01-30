@@ -1,6 +1,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+set showtabline=2
 set background=dark
 set ruler
 
