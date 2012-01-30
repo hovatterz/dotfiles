@@ -34,11 +34,12 @@ BRIGHT_GREEN="\[\e[${BRIGHT};${FG_GREEN}m\]"
 BLUE="\[\e[${DULL};${FG_BLUE}m\]"
 BRIGHT_BLUE="\[\e[${BRIGHT};${FG_BLUE}m\]"
 
-grb_git_prompt() {
+GIT_PS1_SHOWDIRTYSTATE=yes
+function grb_git_prompt() {
 	local g="$(__gitdir)"
 	if [ -n "$g" ]; then
 		local GIT_PROMPT=`__git_ps1 "(%s)"`
-		echo ${GIT_PROMPT}
+		echo "${GIT_PROMPT}"
 	fi
 }
 
