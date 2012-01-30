@@ -64,3 +64,7 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
+
+
+" CommandT ignore stuff
+:set wildignore+=*.class,*.jar,*.psd,*.png,*.jpg,*.bmp,*.gif,*.jnilib,*.dylib
