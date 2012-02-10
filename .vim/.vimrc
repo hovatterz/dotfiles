@@ -1,6 +1,12 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" Stop myself from being stupid
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
 set showtabline=2
 set background=dark
 set ruler
