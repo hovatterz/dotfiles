@@ -36,7 +36,6 @@ set smartindent
 " Line Stuff
 set number " Show numbers
 set textwidth=80
-set wrap
 set showbreak=>>>
 
 " Format Options
