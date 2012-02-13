@@ -54,9 +54,6 @@ syntax on
 filetype plugin on
 filetype plugin indent on
 
-" Rspec
-map <Leader>T :! rspec spec/
-
 " Switch between cpp/h files
 map <Leader>f :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
