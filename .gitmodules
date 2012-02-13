@@ -13,6 +13,6 @@
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule ".vim/bundle/vim-rspec"]
-	path = .vim/bundle/vim-rspec
-	url = git://github.com/skwp/vim-rspec.git
+[submodule ".vim/bundle/sweet-rspec-vim"]
+	path = .vim/bundle/sweet-rspec-vim
+	url = git://github.com/duskhacker/sweet-rspec-vim.git

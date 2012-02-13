@@ -73,3 +73,9 @@ inoremap <s-tab> <c-n>
 
 " CommandT ignore stuff
 :set wildignore+=*.class,*.jar,*.psd,*.png,*.jpg,*.bmp,*.gif,*.jnilib,*.dylib
+
+" RSpec
+map <Leader>r :SweetVimRspecRunFile<CR>
+map <Leader>R :SweetVimRspecRunFocused<CR>
+map <Leader>p :SweetVimRspecRunPrevious<CR>
+let $SWEET_VIM_RSPEC_SHOW_PASSING="true"
