@@ -92,6 +92,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
 let mapleader=","
+set cursorline
 set cmdheight=1
 
 " Don't show scroll bars in the GUI
