@@ -69,6 +69,7 @@ set hls
 " GRB: set the color scheme
 :set t_Co=256 " 256 colors
 :set background=dark
+:color grb256
 
 " GRB: Put useful info in status line
 :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
@@ -102,7 +103,7 @@ augroup myfiletypes
     autocmd!
 
     " For Ruby, autoindent with two spaces, always expand tabs
-    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai=sw2 sts=2 et
+    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
 augroup END
 
 set switchbuf=useopen
@@ -125,6 +126,8 @@ set shell=bash
 
 " Indent p tags
 autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+
+set background=dark
 
 " Stop myself from being stupid
 noremap <Up> <nop>
