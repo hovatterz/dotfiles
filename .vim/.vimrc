@@ -135,3 +135,12 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+
+function! GFTabEdit()
+    let file=expand("<cfile>")
+    exec "tabnew"
+    exec "edit " . file
+endfunction
+
+:map gf :call GFTabEdit()<CR>
