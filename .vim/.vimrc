@@ -112,7 +112,7 @@ set number
 set numberwidth=5
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
-command! W :w
+:map W :w<cr>
 
 " Always show tab bar
 set showtabline=2
