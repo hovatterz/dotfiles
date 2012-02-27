@@ -104,7 +104,8 @@ augroup myfiletypes
     autocmd!
 
     " For Ruby, autoindent with two spaces, always expand tabs
-    autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+    autocmd FileType ruby,haml,eruby,yaml,html,sass,cucumber set ai sw=2 sts=2 et
+    autocmd FileType javascript set ai sw=4 sts=4 et
 augroup END
 
 set switchbuf=useopen
