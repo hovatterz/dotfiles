@@ -129,14 +129,11 @@ set shell=bash
 " Indent p tags
 autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
 
-set background=dark
-
 " Stop myself from being stupid
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
-
 
 function! GFTabEdit()
     let file=expand("<cfile>")
