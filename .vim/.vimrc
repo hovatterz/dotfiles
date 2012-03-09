@@ -120,8 +120,8 @@ set numberwidth=5
 set showtabline=2
 
 augroup mkd
-    autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:&gt;
-    autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:&gt;
+    autocmd BufRead *.mkd set textwidth=75 ai formatoptions=tcroqn2 comments=n:&gt;
+    autocmd BufRead *.markdown set textwidth=75 ai formatoptions=tcroqn2 comments=n:&gt;
 augroup END
 
 set shell=bash
