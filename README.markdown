@@ -1,7 +1,3 @@
-## Installation:
-
-git clone git@github.com:hovatterz/dotfiles.git ~/dotfiles
-
 ## Create symlinks:
 
 ln -s dotfiles/.vim/ ~/.vim    
