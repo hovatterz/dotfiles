@@ -1,0 +1,15 @@
+[user]
+	email = zackhovatter@gmail.com
+	name = Zack Hovatter
+[color]
+    ui = auto
+[core]
+	editor = vim
+    excludesfile = ~/.gitignore_global
+[alias]
+    aa = add --all
+    amend = commit --amend
+    ci = commit
+    st = status
+[merge]
+    tool = vimdiff
