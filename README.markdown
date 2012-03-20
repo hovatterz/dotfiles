@@ -1,13 +1,15 @@
-Installation:
+## Installation:
 
-	git clone git@github.com:hovatterz/dotfiles.git ~/dotfiles
+git clone git@github.com:hovatterz/dotfiles.git ~/dotfiles
 
-Create symlinks:
+## Create symlinks:
 
-	ln -s dotfiles/.vim/ ~/.vim
-	ln -s dotfiles//.vimrc ~/.vimrc
-	ln -s dotfiles/.bashrc ~/.bashrc
+ln -s dotfiles/.vim/ ~/.vim
+ln -s dotfiles/.vimrc ~/.vimrc
+ln -s dotfiles/.bashrc ~/.bashrc
+ln -s dotfiles/.gitconfig ~/.gitconfig
+ln -s dotfiles/.gitignore_global ~/.gitignore_global
 
-Fetch submodules:
+## Fetch submodules:
 
-	git submodule update --init
+git submodule update --init
