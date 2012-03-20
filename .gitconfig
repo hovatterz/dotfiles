@@ -10,6 +10,7 @@
     aa = add --all
     amend = commit --amend
     ci = commit
+    dc = diff --cached
     pom = push origin master
     st = status
 [merge]
