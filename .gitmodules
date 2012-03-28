@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule ".vim/bundle/vim-clojure"]
+	path = .vim/bundle/vim-clojure
+	url = https://github.com/vim-scripts/VimClojure.git
