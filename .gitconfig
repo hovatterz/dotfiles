@@ -9,8 +9,10 @@
 [alias]
     aa = add --all
     amend = commit --amend
+    b = branch
     ci = commit
     dc = diff --cached
+    fa = fetch --all
     pom = push origin master
     st = status
 [merge]
