@@ -11,6 +11,7 @@
     amend = commit --amend
     b = branch
     ci = commit
+    co = checkout
     dc = diff --cached
     fa = fetch --all
     pom = push origin master
