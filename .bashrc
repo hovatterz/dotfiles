@@ -22,29 +22,18 @@ alias bx='bundle exec'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 
-DULL=0
-BRIGHT=1
-FG_RED=31
-FG_GREEN=32
-FG_BLUE=34
-NORMAL="\[\e[0m\]"
-RED="\[\e[${DULL};${FG_RED}m\]"
-BRIGHT_RED="\[\e[${BRIGHT};${FG_RED}m\]"
-GREEN="\[\e[${DULL};${FG_GREEN}m\]"
-BRIGHT_GREEN="\[\e[${BRIGHT};${FG_GREEN}m\]"
-BLUE="\[\e[${DULL};${FG_BLUE}m\]"
-BRIGHT_BLUE="\[\e[${BRIGHT};${FG_BLUE}m\]"
+source ~/dotfiles/bash_colors.sh
 
 GIT_PS1_SHOWDIRTYSTATE=yes
 function grb_git_prompt() {
 	local g="$(__gitdir)"
 	if [ -n "$g" ]; then
-		local GIT_PROMPT=`__git_ps1 "(%s)"`
+        local GIT_PROMPT=`__git_ps1 " on ${BRIGHT_GREEN}(%s)${NORMAL}"`
 		echo "${GIT_PROMPT}"
 	fi
 }
 
-export PS1="${BRIGHT_GREEN}\u${NORMAL}:\W${BRIGHT_GREEN}\$(grb_git_prompt)${NORMAL} $ "
+export PS1="${RED}\u${NORMAL} at ${BLUE}\h${NORMAL} in ${YELLOW}\w${NORMAL}\$(grb_git_prompt)\n$ "
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
