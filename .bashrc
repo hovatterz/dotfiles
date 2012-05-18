@@ -2,9 +2,6 @@
 export PATH=${PATH}:/usr/local/bin
 export PATH="~/bin:$PATH"
 
-# JSTestDriver path
-export JSTESTDRIVER_HOME=~/bin
-
 #MacPorts Installer addition on 2011-09-13_at_10:10:44: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
@@ -37,3 +34,5 @@ export PS1="${RED}\u${NORMAL} at ${BLUE}\h${NORMAL} in ${YELLOW}\w${NORMAL}\$(gr
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
