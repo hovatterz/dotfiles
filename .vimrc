@@ -69,7 +69,7 @@ set hls
 " GRB: set the color scheme
 :set t_Co=256 " 256 colors
 :set background=dark
-:color grb256
+:color tomorrow-night
 
 " GRB: Put useful info in status line
 :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
@@ -117,6 +117,8 @@ set numberwidth=5
 " Seriously, guys. It's not like :W is bound to anything anyway.
 :map W :w<cr>
 
+:map <Leader>n :%s/\r/\r/g<cr>
+
 " Always show tab bar
 set showtabline=2
 
@@ -130,7 +132,6 @@ set shell=bash
 " Indent p tags
 autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
 
-" Stop myself from being stupid
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
@@ -143,3 +144,4 @@ function! GFTabEdit()
 endfunction
 
 :map gf :call GFTabEdit()<CR>
+set wildignore+=doc/**
