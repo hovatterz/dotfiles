@@ -145,3 +145,20 @@ endfunction
 
 :map gf :call GFTabEdit()<CR>
 set wildignore+=doc/**
+
+let g:localvimrc_sandbox=0
+
+if isdirectory("build")
+    set makeprg=make\ -C\ ./build
+    set wildignore+=build/*,CMakeFiles
+end
+
+if filereadable("SConstruct")
+    set makeprg=scons
+end
+
+" folding settings
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1

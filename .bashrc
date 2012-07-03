@@ -1,5 +1,5 @@
 #paths
-export PATH=${PATH}:/usr/local/bin
+export PATH=/usr/local/bin:${PATH}
 export PATH="~/bin:$PATH"
 
 #MacPorts Installer addition on 2011-09-13_at_10:10:44: adding an appropriate PATH variable for use with MacPorts.
@@ -16,6 +16,7 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias lla='ls -lGa'
 alias bx='bundle exec'
+alias computer,=sudo
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
 

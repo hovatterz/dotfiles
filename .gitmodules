@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/vim-clojure"]
 	path = .vim/bundle/vim-clojure
 	url = https://github.com/vim-scripts/VimClojure.git
+[submodule ".vim/bundle/vim-coffee-script"]
+	path = .vim/bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
