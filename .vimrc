@@ -58,7 +58,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
-" set smartindent
 set laststatus=2
 set showmatch
 set incsearch
@@ -131,6 +130,8 @@ set shell=bash
 
 " Indent p tags
 autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+
+autocmd FileType javascript set shiftwidth=2
 
 noremap <Up> <nop>
 noremap <Down> <nop>
