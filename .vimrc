@@ -151,7 +151,6 @@ let g:localvimrc_sandbox=0
 
 if filereadable("Makefile")
     set wildignore+=build/*,obj/*
-    nmap <Leader>l :call Cpplint()<CR>
     nmap <Leader>r :make run<CR>
     nmap <Leader>m :make<CR>
 end
@@ -159,14 +158,12 @@ end
 if filereadable("CMakeLists.txt")
     set wildignore+=build/*,obj/*
     set makeprg=make\ -C\ build/
-    nmap <Leader>l :call Cpplint()<CR>
     nmap <Leader>m :make<CR>
 end
 
 if filereadable("SConstruct")
     set wildignore+=build/*
     set makeprg=scons
-    nmap <Leader>l :call Cpplint()<CR>
     nmap <Leader>m :make<CR>
 end
 
