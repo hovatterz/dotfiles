@@ -13,7 +13,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
 fi
 
-export TERM='xterm-color'
+export TERM='xterm-256color'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias lla='ls -lGa'

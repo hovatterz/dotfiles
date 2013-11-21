@@ -226,3 +226,7 @@ endfunction
 if has("autocmd")
     autocmd BufEnter *.{cc,cxx,cpp,h,hh,hpp,hxx} setlocal indentexpr=CppNoNamespaceAndTemplateIndent()
 endif
+
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
