@@ -1,5 +1,7 @@
 #paths
 export PATH=/usr/local/bin:${PATH}
+export PATH=/usr/local/sbin:${PATH}
+export PATH=/usr/local/share/npm/bin:${PATH}
 export PATH="~/bin:$PATH"
 
 #MacPorts Installer addition on 2011-09-13_at_10:10:44: adding an appropriate PATH variable for use with MacPorts.
@@ -7,8 +9,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # bash_completion for git
-if [ -f /usr/local/etc/bash_completion ]; then
-	. /usr/local/etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
 fi
 
 export TERM='xterm-color'

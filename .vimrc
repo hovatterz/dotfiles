@@ -149,17 +149,80 @@ set wildignore+=doc/**
 
 let g:localvimrc_sandbox=0
 
-if isdirectory("build")
-    set makeprg=make\ -C\ ./build
-    set wildignore+=build/*,CMakeFiles
+if filereadable("Makefile")
+    set wildignore+=build/*,obj/*
+    nmap <Leader>l :call Cpplint()<CR>
+    nmap <Leader>r :make run<CR>
+    nmap <Leader>m :make<CR>
+end
+
+if filereadable("CMakeLists.txt")
+    set wildignore+=build/*,obj/*
+    set makeprg=make\ -C\ build/
+    nmap <Leader>l :call Cpplint()<CR>
+    nmap <Leader>m :make<CR>
 end
 
 if filereadable("SConstruct")
+    set wildignore+=build/*
     set makeprg=scons
+    nmap <Leader>l :call Cpplint()<CR>
+    nmap <Leader>m :make<CR>
 end
+
+if filereadable("Gemfile")
+    nmap <Leader>r :Rake<CR>
+end
+
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+  endtry
+  exec a:vim_command . " " . selection
+  redraw!
+endfunction
+
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 
 " folding settings
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=1
+
+" Don't indent namespace and template
+function! CppNoNamespaceAndTemplateIndent()
+    let l:cline_num = line('.')
+    let l:cline = getline(l:cline_num)
+    let l:pline_num = prevnonblank(l:cline_num - 1)
+    let l:pline = getline(l:pline_num)
+    while l:pline =~# '\(^\s*{\s*\|^\s*//\|^\s*/\*\|\*/\s*$\)'
+        let l:pline_num = prevnonblank(l:pline_num - 1)
+        let l:pline = getline(l:pline_num)
+    endwhile
+    let l:retv = cindent('.')
+    let l:pindent = indent(l:pline_num)
+    if l:pline =~# '^\s*template\s*\s*$'
+        let l:retv = l:pindent
+    elseif l:pline =~# '\s*typename\s*.*,\s*$'
+        let l:retv = l:pindent
+    elseif l:cline =~# '^\s*>\s*$'
+        let l:retv = l:pindent - &shiftwidth
+    elseif l:pline =~# '\s*typename\s*.*>\s*$'
+        let l:retv = l:pindent - &shiftwidth
+    elseif l:pline =~# '^\s*namespace.*'
+        let l:retv = 0
+    endif
+    return l:retv
+endfunction
+
+if has("autocmd")
+    autocmd BufEnter *.{cc,cxx,cpp,h,hh,hpp,hxx} setlocal indentexpr=CppNoNamespaceAndTemplateIndent()
+endif
