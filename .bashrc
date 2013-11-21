@@ -28,12 +28,12 @@ GIT_PS1_SHOWDIRTYSTATE=yes
 function grb_git_prompt() {
 	local g="$(__gitdir)"
 	if [ -n "$g" ]; then
-        local GIT_PROMPT=`__git_ps1 " on ${BRIGHT_GREEN}(%s)${NORMAL}"`
+        local GIT_PROMPT=`__git_ps1 " ${GREEN}(%s)${NORMAL}"`
 		echo "${GIT_PROMPT}"
 	fi
 }
 
-export PS1="${RED}\u${NORMAL} at ${BLUE}\h${NORMAL} in ${YELLOW}\w${NORMAL}\$(grb_git_prompt)\n$ "
+export PS1="[ ${RED}\u${NORMAL}@${CYAN}\h${NORMAL} ] ${BLUE}\W${NORMAL}\$(grb_git_prompt)\n$ "
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
