@@ -225,5 +225,5 @@ if has("autocmd")
 endif
 
 let g:solarized_termcolors=256
-set background=light
+set background=dark
 colorscheme solarized
