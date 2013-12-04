@@ -33,7 +33,7 @@ function grb_git_prompt() {
 	fi
 }
 
-export PS1="[ ${RED}\u${NORMAL}@${CYAN}\h${NORMAL} ] ${BLUE}\W${NORMAL}\$(grb_git_prompt)\n$ "
+export PS1="[ ${RED}\u${NORMAL}@${CYAN}\h${NORMAL} ${BLUE}\W${NORMAL}\$(grb_git_prompt) ]\n$ "
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
