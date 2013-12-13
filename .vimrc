@@ -22,7 +22,6 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
@@ -45,11 +44,8 @@ if has("autocmd")
     \ endif
 
   augroup END
-
 else
-
   set autoindent        " always set autoindenting on
-
 endif " has("autocmd")
 
 " GRB: sane editing configuration"
@@ -153,15 +149,11 @@ if filereadable("Makefile")
     set wildignore+=build/*,obj/*
     nmap <Leader>r :make run<CR>
     nmap <Leader>m :make<CR>
-end
-
-if filereadable("CMakeLists.txt")
+elseif filereadable("CMakeLists.txt")
     set wildignore+=build/*,obj/*
     set makeprg=make\ -C\ build/
     nmap <Leader>m :make<CR>
-end
-
-if filereadable("SConstruct")
+elseif filereadable("SConstruct")
     set wildignore+=build/*
     set makeprg=scons
     nmap <Leader>m :make<CR>
@@ -227,3 +219,7 @@ endif
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
+" Display bad trailing spaces, nbsps, and tabs
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
