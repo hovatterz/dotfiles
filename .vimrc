@@ -63,8 +63,6 @@ set hls
 
 " GRB: set the color scheme
 :set t_Co=256 " 256 colors
-:set background=dark
-:color tomorrow-night
 
 " GRB: Put useful info in status line
 :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
