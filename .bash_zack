@@ -13,7 +13,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
 fi
 
-export TERM='xterm-256color'
+export TERM='xterm-color'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias lla='ls -lGa'
@@ -35,7 +35,15 @@ function grb_git_prompt() {
 
 export PS1="[ ${RED}\u${NORMAL}@${CYAN}\h${NORMAL} ${BLUE}\W${NORMAL}\$(grb_git_prompt) ]\n$ "
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+if [[ -e /usr/local/share/chruby ]]; then
+  # Load chruby
+  source '/usr/local/share/chruby/chruby.sh'
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  # Automatically switch rubies
+  source '/usr/local/share/chruby/auto.sh'
+
+  # Set a default ruby if a .ruby-version file exists in the home dir
+  if [[ -f ~/.ruby-version ]]; then
+    chruby $(cat ~/.ruby-version)
+  fi
+fi
