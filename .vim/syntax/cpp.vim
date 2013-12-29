@@ -53,7 +53,7 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
     HiLink cppExceptions      Exception
     HiLink cppOperator        Operator
     HiLink cppStatement       Statement
-    HiLink cppSTL         Identifier
+    " HiLink cppSTL         Identifier
     HiLink cppNCBI        Special
     HiLink cppType        Type
     HiLink cppStorageClass    StorageClass

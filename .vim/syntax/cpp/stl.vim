@@ -15,8 +15,8 @@ if version >= 508 || !exists("did_cpp_syntax_inits")
   else
     command -nargs=+ HiLink hi def link <args>
   endif
-  HiLink cppSTL				Identifier
-  HiLink cppSTLtype         Type
+  " HiLink cppSTL				Identifier
+  " HiLink cppSTLtype         Type
   delcommand HiLink
 endif
 
