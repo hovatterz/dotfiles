@@ -214,9 +214,8 @@ if has("autocmd")
     autocmd BufEnter *.{cc,cxx,cpp,h,hh,hpp,hxx} setlocal indentexpr=CppNoNamespaceAndTemplateIndent()
 endif
 
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+let g:molokai_original=1
+colorscheme molokai
 
 " Display bad trailing spaces, nbsps, and tabs
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
