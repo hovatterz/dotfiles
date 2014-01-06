@@ -155,6 +155,10 @@ elseif filereadable("SConstruct")
     set wildignore+=build/*
     set makeprg=scons
     nmap <Leader>m :make<CR>
+elseif filereadable("Gruntfile.js")
+    set wildignore+=node_modules
+    set makeprg=grunt
+    nmap <Leader>m :make<CR>
 end
 
 if filereadable("Gemfile")
@@ -164,14 +168,14 @@ end
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
 function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    " Swallow the ^C so that the redraw below happens; otherwise there will be
-    " leftovers from selecta on the screen
-  endtry
-  exec a:vim_command . " " . selection
-  redraw!
+    try
+        silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+    catch /Vim:Interrupt/
+        " Swallow the ^C so that the redraw below happens; otherwise there will be
+        " leftovers from selecta on the screen
+    endtry
+    exec a:vim_command . " " . selection
+    redraw!
 endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
