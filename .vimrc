@@ -139,7 +139,8 @@ function! GFTabEdit()
 endfunction
 
 :map gf :call GFTabEdit()<CR>
-set wildignore+=doc/**
+set wildignore+=doc/*
+set wildignore+=docs/*
 
 let g:localvimrc_sandbox=0
 
@@ -218,8 +219,8 @@ if has("autocmd")
     autocmd BufEnter *.{cc,cxx,cpp,h,hh,hpp,hxx} setlocal indentexpr=CppNoNamespaceAndTemplateIndent()
 endif
 
-let g:molokai_original=1
-colorscheme molokai
+set background=dark
+colorscheme tomorrow-night
 
 " Display bad trailing spaces, nbsps, and tabs
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
