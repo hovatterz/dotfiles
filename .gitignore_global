@@ -3,3 +3,5 @@
 _vimrc_local.vim
 .lvimrc
 .env
+.ruby-version
+dump.rdb

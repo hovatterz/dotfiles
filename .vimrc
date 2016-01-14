@@ -144,22 +144,23 @@ set wildignore+=docs/*
 
 let g:localvimrc_sandbox=0
 
+nmap <Leader>m :make<CR>
 if filereadable("Makefile")
     set wildignore+=build/*,obj/*
     nmap <Leader>r :make run<CR>
-    nmap <Leader>m :make<CR>
 elseif filereadable("CMakeLists.txt")
     set wildignore+=build/*,obj/*
+    set wildignore+=build/docs,obj/*
+    set wildignore+=external/
     set makeprg=make\ -C\ build/
-    nmap <Leader>m :make<CR>
 elseif filereadable("SConstruct")
     set wildignore+=build/*
     set makeprg=scons
-    nmap <Leader>m :make<CR>
 elseif filereadable("Gruntfile.js")
     set wildignore+=node_modules
     set makeprg=grunt
-    nmap <Leader>m :make<CR>
+elseif filereadable("package.json")
+    set wildignore+=node_modules
 end
 
 if filereadable("Gemfile")
@@ -184,7 +185,7 @@ endfunction
 nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 
 " folding settings
-set foldmethod=indent
+set foldmethod=manual
 set foldnestmax=10
 set nofoldenable
 set foldlevel=1
@@ -217,6 +218,7 @@ endfunction
 
 if has("autocmd")
     autocmd BufEnter *.{cc,cxx,cpp,h,hh,hpp,hxx} setlocal indentexpr=CppNoNamespaceAndTemplateIndent()
+    autocmd BufEnter *.rb set makeprg=ruby\ %
 endif
 
 set background=dark
@@ -225,3 +227,6 @@ colorscheme tomorrow-night
 " Display bad trailing spaces, nbsps, and tabs
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
+
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"

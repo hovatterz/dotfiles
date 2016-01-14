@@ -1,10 +1,10 @@
 [user]
-	email = zackhovatter@gmail.com
-	name = Zack Hovatter
+    email = zackhovatter@gmail.com
+    name = Zack Hovatter
 [color]
     ui = auto
 [core]
-	editor = vim
+    editor = vim
     excludesfile = ~/.gitignore_global
 [alias]
     aa = add --all
@@ -16,7 +16,10 @@
     fa = fetch --all
     pom = push origin master
     phm = push heroku master
+    pos = push origin staging
     st = status
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [merge]
     tool = vimdiff
+[push]
+	default = simple

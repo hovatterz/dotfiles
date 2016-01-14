@@ -3,6 +3,9 @@ export PATH=/usr/local/bin:${PATH}
 export PATH=/usr/local/sbin:${PATH}
 export PATH=/usr/local/share/npm/bin:${PATH}
 export PATH="~/bin:$PATH"
+export PATH="~/bin/eb:$PATH"
+export PATH="~/bin/rds/bin:$PATH"
+export PATH="/Applications/Racket v6.0.1/bin:$PATH"
 
 #MacPorts Installer addition on 2011-09-13_at_10:10:44: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -47,3 +50,13 @@ if [[ -e /usr/local/share/chruby ]]; then
     chruby $(cat ~/.ruby-version)
   fi
 fi
+
+export EDITOR=$(which vim)
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/zack/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+export CXX="ccache c++"
+
+ulimit -n 2560
